@@ -10,7 +10,7 @@
 <body>
 
     <!-- /*Header Section Code*/ -->
-    <header class="header">
+    <!-- <header class="header">
         <a href="#home" class="logo">Saumya Mishra</a>
         <i class='bx bx-menu' id="menu-icon"></i>
         <nav class="navbar">
@@ -18,6 +18,17 @@
         <a href="#about">About</a>
         <a href="#achievement">Achievement</a>
         <a href="#contact">Contact</a>
+        </nav>
+    </header> -->
+    <header class="header">
+        <a href="#home" class="logo">Saumya Mishra</a>
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <button id="mode-toggle" class="btn">Mode</button>
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#achievement">Achievement</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
 
@@ -31,7 +42,7 @@
             <h3>Hello, Myself</h3>
             <h1>Saumya Mishra</h1>
             <h3>And I'm a <span class="multiple-text">Web Developer</span></h3>
-            <p>Exploring the frontiers of AI and research, driven by curiosity and innovation.</p>
+            <p>Exploring the frontiers of AI and research, driven by curiosity and innovation!</p>
 
             <div class="social-media">
                 <a href="https://www.linkedin.com/in/saumya-mishra-b94a9b324/"><i class='bx bxl-linkedin' ></i></a>
@@ -39,7 +50,7 @@
                 <a href="https://leetcode.com/u/Saumya_057/"><i class='bx bx-code' ></i></a>
                 
             </div>
-            <a href="#" class="btn">Download CV</a>
+            <a href="Resume-Saumya Mishra.pdf" class="btn">Download CV</a>
         </div>
 
      </section>
@@ -72,27 +83,29 @@
                     <ol class="list">
                         
                           
-<li> Green Olympiad 2019-20 - Certificate of Distinction</li>
-<li>SOF IGKO 2019 ( International General Knowledge Olympiad)
-a. School Rank- 1
-b. City Rank- 1
-c. Zonal Rank- 28
-d. International Rank- 341</li>
-<li>SOF NSO 2018 ( National Science Olympiad)
-a. School Rank- 1
-b. City Rank- 1
-c. Zonal Rank- 179
-d. International Rank- 329</li>
-<li>SOF NSO ( National Science Olympiad)- Qualified for Level 2
-a. International Rank- 4942
-b. Zonal Rank- 438</li>
-<li>SOF IGKO 2018
-a. School Rank- 1
-b. City Rank- 1
-c. Zonal Rank- 19
-d. International Rank- 139</li>
-<li>Other Participations in SOF- IMO( International Maths Olympiad) 2018 2019 respectively</li>
-<li>Humming bird International Science Olympiad - Gold Medal 8. Hindustan Olympiad - III at district Level</li>
+<li class="li"> Green Olympiad 2019-20 - Certificate of Distinction</li>
+<li class="li">SOF IGKO 2019 ( International General Knowledge Olympiad)
+<ul>a. School Rank- 1</ul>
+<ul>b. City Rank- 1</ul>
+<ul>c. Zonal Rank- 28</ul>
+<ul>d. International Rank- 341</ul></li>
+<li class="li">SOF NSO 2018 ( National Science Olympiad)
+<ul>a. School Rank- 1</ul>
+<ul>City Rank- 1</ul>
+<ul>c. Zonal Rank- 179</ul>
+<ul>d. International Rank- 329</ul></li>
+<li class="li">SOF NSO ( National Science Olympiad)- Qualified for Level 2
+<ul>a. International Rank- 4942</ul>
+<ul>b. Zonal Rank- 438</ul></li>
+<li class="li">SOF IGKO 2018
+<ul>a. School Rank- 1</ul>
+<ul>b. City Rank- 1</ul>
+<ul>c. Zonal Rank- 19</ul>
+<ul>d.International Rank- 139</ul></li>
+<li class="li">Other Participations in SOF- IMO( International Maths Olympiad) 2018 2019 respectively</li>
+<li class="li">Humming bird International Science Olympiad - Gold Medal </li>
+
+<li class="li"> Hindustan Olympiad - III at district Level</li>
 
                     </ol>
                 </div>
@@ -105,15 +118,16 @@ d. International Rank- 139</li>
                 
                 <h2 class="heading"><a href="#" class="symbols"><i class='bx bxs-medal' ></i></a>Merits</h2>
                 <ol class="list">
-<li> Viksit Bharat Young Leaders’s Dialogue 2025 Finalist- among top 3000 out of 30 lakh participants</li>
-<li> National Exhibition on Science
+<li class="li"> Viksit Bharat Young Leaders’s Dialogue 2025 Finalist- among top 3000 out of 30 lakh participants</li>
+<li class="li"> National Exhibition on Science
 Technology - III under socio category - project Dustbin IOT</li>
-<li>STEM Course in Scratch/3D Designing/ Robotics</li>
-<li>Best MOC Award for Combined Annual Training Camp in NCC</li>
-<li>Achievement Award for Excellence in Academic Performance 2018, 2019 as Class Topper and 2020 as School Topper respectively
+<li class="li">STEM Course in Scratch/3D Designing/ Robotics</li>
+<li class="li">Best MOC Award for Combined Annual Training Camp in NCC</li>
+<li class="li">Achievement Award for Excellence in Academic Performance 2018, 2019 as Class Topper and 2020 as School Topper respectively
 December 2024</li>
    
-<li>Inter School TSSC: Science Expo Robotics Participation 7.Vice Captain for 2 consecutive years, Head Girl in final year</li>
+<li class="li">Inter School TSSC: Science Expo Robotics Participation </li>
+<li class="li">7.Vice Captain for 2 consecutive years, Head Girl in final year</li>
                 </ol>
             </div>
         </div>
@@ -142,14 +156,15 @@ December 2024</li>
             <textarea name="message" id="" cols="'30" rows="10" placeholder="Your Message"></textarea>
             <input type="submit" value="Send Message" class="btn">
         </form>
+        <div id="success" style="display:none">Message Sent!</div>
     </section>
 
     <!-- footer -->
      <footer class="footer">
         <div class="social">
-            <a href="#"><i class='bx bxl-linkedin' ></i></a>
-            <a href="#"><i class='bx bxl-github' ></i></a>
-            <a href="#"><i class='bx bx-code' ></i></a>
+            <a href="https://www.linkedin.com/in/saumya-mishra-b94a9b324/"><i class='bx bxl-linkedin' ></i></a>
+            <a href="https://github.com/Saumya-Mishra-536"><i class='bx bxl-github' ></i></a>
+            <a href="https://leetcode.com/u/Saumya_057/"><i class='bx bx-code' ></i></a>
             </div>
             <p class="copyright">
                 &copy;Saumya Mishra - All Rights Reserved
@@ -157,5 +172,8 @@ December 2024</li>
      </footer>
      <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script src="script.js"></script>
+
+    
+    
 </body>
 </html>
