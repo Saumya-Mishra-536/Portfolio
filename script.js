@@ -21,9 +21,9 @@ const typed = new Typed('.multiple-text', {
 
   });
 
-  // script.js
+// script.js
 const toggleButton = document.getElementById('mode-toggle');
-const body = document.body;
+const { body } = document;
 const header = document.querySelector('.header');
 const navbarLinks = document.querySelectorAll('.navbar a');
 
