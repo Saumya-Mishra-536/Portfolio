@@ -1,0 +1,11 @@
+{
+  "name": "portfolio-root",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "cd my-portfolio && npm run dev",
+    "start": "npm run dev",
+    "install:my-portfolio": "cd my-portfolio && npm install",
+    "postinstall": "npm run install:my-portfolio"
+  }
+}
