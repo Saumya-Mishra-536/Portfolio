@@ -1,14 +1,10 @@
 import { useState, useEffect } from 'react'
 
 const navLinks = [
-  { label: 'Home', href: '#home' },
-  { label: 'About', href: '#about' },
-  { label: 'Education', href: '#education' },
-  { label: 'Experience', href: '#experience' },
+  { label: 'Business News', href: '#experience' },
   { label: 'Projects', href: '#projects' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Achievements', href: '#achievements' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Tech Stack', href: '#skills' },
+  { label: 'Honors', href: '#achievements' },
 ]
 
 export default function Navbar() {
@@ -16,7 +12,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50)
+    const handleScroll = () => setScrolled(window.scrollY > 30)
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -27,55 +23,47 @@ export default function Navbar() {
   }
 
   return (
-    <nav
-      style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        zIndex: 1000,
-        background: scrolled ? 'rgba(10,10,30,0.95)' : 'rgba(10,10,30,0.7)',
-        backdropFilter: 'blur(20px)',
-        borderBottom: scrolled ? '1px solid rgba(139,92,246,0.3)' : 'none',
+    <nav style={{
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      right: 0,
+      zIndex: 1000,
+      background: scrolled ? 'rgba(247,246,243,0.97)' : 'rgba(247,246,243,0.92)',
+      backdropFilter: 'blur(12px)',
+      borderBottom: `1px solid ${scrolled ? '#e0ddd7' : 'transparent'}`,
+      transition: 'all 0.3s ease',
+    }}>
+      <div style={{
+        maxWidth: '1100px',
+        margin: '0 auto',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        height: '58px',
         padding: '0 2rem',
-        transition: 'all 0.3s ease',
-      }}
-    >
-      <div
-        style={{
-          maxWidth: '1200px',
-          margin: '0 auto',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          height: '70px',
-        }}
-      >
+      }}>
+
         {/* Logo */}
         <div
           onClick={() => handleNavClick('#home')}
           style={{
-            fontSize: '1.4rem',
-            fontWeight: '800',
-            background: 'linear-gradient(135deg, #a78bfa, #60a5fa)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
+            fontSize: '0.88rem',
+            fontWeight: '600',
+            color: '#111',
             cursor: 'pointer',
-            letterSpacing: '-0.5px',
+            letterSpacing: '-0.01em',
           }}
         >
-          SM
+          Saumya Mishra
         </div>
 
-        {/* Desktop Links */}
-        <div
-          style={{
-            display: 'flex',
-            gap: '0.2rem',
-            alignItems: 'center',
-          }}
-          className="desktop-nav"
-        >
+        {/* Desktop Nav */}
+        <div className="desktop-nav" style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.1rem',
+        }}>
           {navLinks.map((link) => (
             <button
               key={link.label}
@@ -83,22 +71,23 @@ export default function Navbar() {
               style={{
                 background: 'none',
                 border: 'none',
-                color: 'rgba(255,255,255,0.75)',
-                fontSize: '0.82rem',
+                color: '#444',
+                fontSize: '0.78rem',
                 fontWeight: '500',
-                padding: '0.4rem 0.7rem',
+                padding: '0.4rem 0.85rem',
                 cursor: 'pointer',
-                borderRadius: '8px',
-                transition: 'all 0.2s ease',
-                letterSpacing: '0.3px',
+                borderRadius: '50px',
+                transition: 'all 0.18s ease',
+                fontFamily: 'inherit',
+                letterSpacing: '0.01em',
               }}
               onMouseEnter={(e) => {
-                e.target.style.color = '#a78bfa'
-                e.target.style.background = 'rgba(167,139,250,0.1)'
+                e.target.style.background = 'rgba(0,0,0,0.05)'
+                e.target.style.color = '#111'
               }}
               onMouseLeave={(e) => {
-                e.target.style.color = 'rgba(255,255,255,0.75)'
                 e.target.style.background = 'none'
+                e.target.style.color = '#444'
               }}
             >
               {link.label}
@@ -106,9 +95,19 @@ export default function Navbar() {
           ))}
         </div>
 
+        {/* CTA */}
+        <a
+          href="mailto:saumyamishra@example.com"
+          className="btn btn-dark desktop-nav"
+          style={{ fontSize: '0.74rem', padding: '0.5rem 1.1rem' }}
+        >
+          Contact Me
+        </a>
+
         {/* Hamburger */}
         <button
           onClick={() => setIsOpen(!isOpen)}
+          className="hamburger"
           style={{
             display: 'none',
             background: 'none',
@@ -118,24 +117,23 @@ export default function Navbar() {
             flexDirection: 'column',
             gap: '5px',
           }}
-          className="hamburger"
         >
           {[0, 1, 2].map((i) => (
             <span
               key={i}
               style={{
                 display: 'block',
-                width: '25px',
-                height: '2px',
-                background: '#a78bfa',
+                width: '22px',
+                height: '1.5px',
+                background: '#111',
                 borderRadius: '2px',
-                transition: 'all 0.3s ease',
+                transition: 'all 0.25s ease',
                 opacity: isOpen && i === 1 ? 0 : 1,
                 transform:
                   isOpen && i === 0
-                    ? 'rotate(45deg) translate(5px, 5px)'
+                    ? 'rotate(45deg) translate(4.5px, 4.5px)'
                     : isOpen && i === 2
-                    ? 'rotate(-45deg) translate(5px, -5px)'
+                    ? 'rotate(-45deg) translate(4.5px, -4.5px)'
                     : 'none',
               }}
             />
@@ -145,17 +143,14 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div
-          style={{
-            background: 'rgba(10,10,30,0.98)',
-            backdropFilter: 'blur(20px)',
-            padding: '1rem 2rem 2rem',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '0.5rem',
-            borderTop: '1px solid rgba(139,92,246,0.2)',
-          }}
-        >
+        <div style={{
+          background: '#f7f6f3',
+          borderTop: '1px solid #e0ddd7',
+          padding: '1rem 2rem 1.5rem',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '0.25rem',
+        }}>
           {navLinks.map((link) => (
             <button
               key={link.label}
@@ -163,27 +158,27 @@ export default function Navbar() {
               style={{
                 background: 'none',
                 border: 'none',
-                color: 'rgba(255,255,255,0.8)',
+                color: '#333',
                 fontSize: '1rem',
                 fontWeight: '500',
-                padding: '0.75rem 1rem',
+                padding: '0.65rem 0.75rem',
                 cursor: 'pointer',
-                borderRadius: '10px',
+                borderRadius: '8px',
                 textAlign: 'left',
-                transition: 'all 0.2s ease',
-              }}
-              onMouseEnter={(e) => {
-                e.target.style.color = '#a78bfa'
-                e.target.style.background = 'rgba(167,139,250,0.1)'
-              }}
-              onMouseLeave={(e) => {
-                e.target.style.color = 'rgba(255,255,255,0.8)'
-                e.target.style.background = 'none'
+                transition: 'background 0.15s ease',
+                fontFamily: 'inherit',
               }}
             >
               {link.label}
             </button>
           ))}
+          <a
+            href="mailto:saumyamishra@example.com"
+            className="btn btn-dark"
+            style={{ marginTop: '0.5rem', alignSelf: 'flex-start' }}
+          >
+            Contact Me
+          </a>
         </div>
       )}
 
